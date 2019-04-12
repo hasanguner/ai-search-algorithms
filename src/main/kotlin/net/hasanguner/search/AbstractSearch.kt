@@ -42,7 +42,7 @@ abstract class AbstractSearch : Search {
             .also { addAll(it) }
 
         return parentNode.adjacencies
-            .filterNot { adjacency -> adjacency.target in explored }
+            .filterNot { it.target in explored }
             .mapToUpdatedTargets(parentNode, nodeCosts)
             .let { addAll(it) }
     }
